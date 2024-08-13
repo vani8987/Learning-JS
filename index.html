@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Изучение Js</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@400..700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <!-- задание 1 -->
+    <section class="TaskOne">
+        <h1 class="H1">
+            Вывести кнопку с текстом "Привет", при нажатии на неё выводим alert c текстом "Привет Мир!"
+        </h1>
+        <div class="BtnTaskOne">
+            <button class="BtnBtnTaskOne" id="BtnTaskOne">привет</button>
+        </div>
+    </section>
+
+
+    <!-- задание 2 -->
+    <section class="TaskTwo">
+        <h1 class="H1">
+            Выводим кнопку с текстом "Заполнить" и незаполненный инпут, при клике на кнопку, заполняем инпут текстом "test@email.ru
+        </h1>
+        <div class="FormBtnInputTaskTwo">
+            <input type="email" name="ведите email" id="EmailInputTaskTwo" placeholder="Введите почту">
+            <button class="BtnTaskTwo" id="BtnTaskTwo">заполнить</button>
+            <button class="BtnTaskTwo" id="BtnDeletions">данных нет</button>
+        </div>   
+    </section>
+
+
+    <!-- задание 3 -->
+    <section class="TaskThree">
+        <h1 class="H1">
+            Выводим кнопку и инпут, в инпуте можно ввести любой и текст и при нажатии на кнопку, выводится алерт с текстом "Вы ввели 'текст инпута'" или "Вы ничего не ввели в поле"
+        </h1>
+        <div class="DivInputTaskThree">
+            <input type="text" class="InputTaskThree" id="InputTaskThree" placeholder="введите что то">
+        </div>
+        <div class="DivBtnTaskThree">
+            <button class="BtnTaskThree" id="BtnTaskThree">вывести</button>
+        </div>
+    </section>
+
+    
+    <!-- задание 4 -->
+    <section class="TaskFourth">
+        <h1 class="H1">
+            Выводим кнопку с текстом "Поменять" и два инпута, при клике на кнопку инпуты меняются своим введеным текстом
+        </h1>
+        <div class="DivInputTaskFourth">
+            <input type="text" id="InputTaskFourth_One" class="InputTaskFourth" placeholder="введите что то">
+            <input type="text" id="InputTaskFourth_Two" class="InputTaskFourth" placeholder="введите что то">
+        </div>
+        <div class="DivBtnTaskFourth">
+            <button class="BtnTaskFourth" id="BtnTaskFourth">поменять</button>
+        </div>
+    </section>
+
+
+    <!-- задание 5 -->
+    <section class="TaskFive">
+        <h1 class="H1">
+            Выводим две кнопки "заблокировать" и "разблокировать" и инпут. Одна из них блокирует инпут с помощью атрибута disabled, а другая разблокирует
+        </h1>
+        <div class="DivInputTaskFive">
+            <input type="text" id="InputTaskFive" class="InputTaskFive" placeholder="введите что то">
+        </div>
+        <div class="DivBtnTaskFive">
+            <button class="BtnTaskFive" id="BtnTaskFiveBlocking">заблокировать</button>
+            <button class="BtnTaskFive" id="BtnTaskFiveUnlock">разблокировать</button> 
+        </div>
+    </section>
+
+
+    <script src="./script.js"></script>
+</body>
+</html>
