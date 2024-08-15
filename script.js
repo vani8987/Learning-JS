@@ -44,12 +44,12 @@
 
 
 
-// изучение DOM
+// изучение DOM;
 
-// задание 1
+// задание 1;
 
-// Вывести кнопку с текстом "Привет", при нажатии 
-// на неё выводим alert c текстом "Привет Мир!"
+// Вывести кнопку с текстом "Привет", при нажатии; 
+// на неё выводим alert c текстом "Привет Мир!";
 
 const BtnTaskOne = document.querySelector('#BtnTaskOne');
 
@@ -57,10 +57,10 @@ BtnTaskOne.addEventListener('click', function() {
     alert("Привет Мир!");
 });
 
-// задание 2
+// задание 2;
 
-// Выводим кнопку с текстом "Заполнить" 
-// и незаполненный инпут, при клике на кнопку, заполняем инпут текстом "test@email.ru"
+// Выводим кнопку с текстом "Заполнить" ;
+// и незаполненный инпут, при клике на кнопку, заполняем инпут текстом "test@email.ru";
 
 const EmailInputTaskTwo = document.querySelector('#EmailInputTaskTwo');
 const BtnTaskTwo = document.querySelector('#BtnTaskTwo');
@@ -82,10 +82,10 @@ BtnDeletions.addEventListener('click', function() {
     BtnDeletions.innerText = 'данных нет'
 });
 
-// задание 3
+// задание 3;
 
 // Выводим кнопку и инпут, в инпуте можно ввести любой и текст и при нажатии на кнопку,
-// выводится алерт с текстом "Вы ввели 'текст инпута'" или "Вы ничего не ввели в поле".
+// выводится алерт с текстом "Вы ввели 'текст инпута'" или "Вы ничего не ввели в поле";
 
 const InputTaskThreeTaskTwo = document.querySelector('#InputTaskThree');
 const BtnTaskThree = document.querySelector('#BtnTaskThree');
@@ -100,10 +100,10 @@ BtnTaskThree.addEventListener('click', function() {
 });
 
 
-// задание 4
+// задание 4;
 
-// Выводим кнопку с текстом "Поменять" и два инпута, при клике на
-// кнопку инпуты меняются своим введеным текстом
+// Выводим кнопку с текстом "Поменять" и два инпута, при клике на;
+// кнопку инпуты меняются своим введеным текстом;
 
 const InputTaskThree_One = document.querySelector('#InputTaskFourth_One');
 const InputTaskThree_Two = document.querySelector('#InputTaskFourth_Two');
@@ -123,10 +123,10 @@ BtnTaskFourth.addEventListener('click', ()=> {
 });
 
 
-// задание 5
+// задание 5;
 
-// Выводим две кнопки "заблокировать" и "разблокировать" и инпут. Одна 
-// из них блокирует инпут с помощью атрибута disabled, а другая разблокирует
+// Выводим две кнопки "заблокировать" и "разблокировать" и инпут. Одна;
+// из них блокирует инпут с помощью атрибута disabled, а другая разблокирует;
 
 const InputTaskFive = document.querySelector('#InputTaskFive');
 const BtnTaskFiveBlocking = document.querySelector('#BtnTaskFiveBlocking');
@@ -148,8 +148,26 @@ BtnTaskFiveUnlock.addEventListener('click', ()=> {
 });
 
 
+// задание 6;
 
-// TODO: 
-// доделать задачи 
-// отправить всё на гит
+// Вывести любой квадрат и кнопку "скрыть квадрат". Когда мы нажимаем на скрыть, квадрат исчезает и текст кнопки меняется на "показать квадрат" и так можно кликать сколько угодно раз;
+
+
+// !!задание 
+
+
+// доделать!!!
+const BlockId = document.querySelectorAll('#BlockId');
+const Btnhide = document.querySelector('#Btnhide');
+const BtnShow = document.querySelector('#BtnShow');
+
+for (let i = 0; i < BlockId.length; ++i) {
+    Btnhide.addEventListener('click', function() {
+        Btnhide.innerText = 'выберите блоки'
+        if (!BlockId.classList.contains('BlockHide')) {
+            BlockId.classList.add('BlockHide')
+        }
+
+    });
+}
 
