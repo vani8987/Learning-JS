@@ -153,21 +153,41 @@ BtnTaskFiveUnlock.addEventListener('click', ()=> {
 // Вывести любой квадрат и кнопку "скрыть квадрат". Когда мы нажимаем на скрыть, квадрат исчезает и текст кнопки меняется на "показать квадрат" и так можно кликать сколько угодно раз;
 
 
-// !!задание 
-
-
-// доделать!!!
-const BlockId = document.querySelectorAll('#BlockId');
+const BlockId = document.querySelector('#BlockId');
 const Btnhide = document.querySelector('#Btnhide');
-const BtnShow = document.querySelector('#BtnShow');
 
-for (let i = 0; i < BlockId.length; ++i) {
-    Btnhide.addEventListener('click', function() {
-        Btnhide.innerText = 'выберите блоки'
-        if (!BlockId.classList.contains('BlockHide')) {
-            BlockId.classList.add('BlockHide')
-        }
 
-    });
-}
+Btnhide.addEventListener('click', function() {
+    if (!BlockId.classList.contains('BlockHide')) {
+        BlockId.classList.add('BlockHide');
+        Btnhide.innerText = 'показать блок';
+    } else {
+        BlockId.classList.remove('BlockHide');
+        Btnhide.innerText = 'скрыть блок';
+    };
+});
+
+
+// задание 7
+ 
+// водим красный квадрат, при наведении на него он становиться зеленым, а когда уводим курсор от него, обратно красным.
+
+
+const BlockRed = document.querySelector('#BlockRed');
+
+BlockRed.addEventListener('mouseover', function() {
+    
+    if (!BlockRed.classList.contains('GreenBlock')) {
+        BlockRed.classList.add('GreenBlock');
+        BlockRed.classList.remove('RedBlock');
+    
+    } else {
+        
+        BlockRed.addEventListener('mouseout', function() {
+            BlockRed.classList.add('RedBlock'); 
+            BlockRed.classList.remove('GreenBlock');
+        });
+    };
+});
+
 

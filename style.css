@@ -270,9 +270,6 @@ body{
 .DivBlock{
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    gap: calc(15% / 2);
-    row-gap: 50px;
     padding-top: 50px;
     padding-bottom: 10px;
 }
@@ -286,9 +283,6 @@ body{
 .BtnBlockTaskSix{
     display: flex;
     justify-content: center;
-    flex-wrap: wrap;
-    row-gap: 20px;
-    gap: calc(10% / 2);
     padding-top: 50px;
     padding-bottom: 10px;
 }
@@ -311,7 +305,34 @@ body{
     display: none;
 }
 
-.BtnHide{
-    display: none;
+/* заданеи 7 */
+
+.TaskSeven{
+    background-color: rgb(203, 205, 255);
+    padding-top: 70px;
+    padding-bottom: 40px
 }
 
+
+.TaskSevenBlock{
+    display: flex;
+    justify-content: center;
+    padding-top: 50px;
+    padding-bottom: 10px;
+}
+
+.BlockSevenTask{
+    width: 150px;
+    height: 150px;
+    background-color: rgb(253, 0, 0); 
+}
+
+.RedBlock{
+    background-color: red;
+    transition: 1s;
+}
+
+.GreenBlock{
+    background-color: Green;
+    transition: 1s;
+}
