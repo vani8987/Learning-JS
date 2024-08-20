@@ -191,3 +191,21 @@ BlockRed.addEventListener('mouseover', function() {
 });
 
 
+// задание 8
+
+// создать калькулятор
+
+const inpNumber = document.querySelector('#inpNumber')
+const btnCalculator = document.querySelectorAll('#btnCalculator')
+
+
+let result = 0
+let process = 0
+
+
+btnCalculator.forEach(item => {
+    item.addEventListener('click', function(e) {
+        
+    })
+    
+});
