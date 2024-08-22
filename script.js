@@ -198,14 +198,44 @@ BlockRed.addEventListener('mouseover', function() {
 const inpNumber = document.querySelector('#inpNumber')
 const btnCalculator = document.querySelectorAll('#btnCalculator')
 
-
 let result = 0
 let process = 0
+
+inpNumber.addEventListener('click', function() {
+    // при клике на инпут о исчезает
+    if (inpNumber.focus) {
+        inpNumber.value = ''
+    } 
+
+
+    // !!!
+    // доделать функция возврата 0 когда уходит фокус с инпута
+    // !!!
+
+});
 
 
 btnCalculator.forEach(item => {
     item.addEventListener('click', function(e) {
-        
-    })
-    
+        // функция убирает значение из инпута
+        if (e.target.innerHTML == 'AC' && !inpNumber.value == 0) {
+            inpNumber.value = 0;
+        }
+
+
+        // !!!
+        // реализовать кнопки операции
+        // !!!
+
+
+        // !!!
+        // реализовать вывод чисел и операций в инпут
+        // !!!
+
+
+        // !!!
+        // сделать скрипты основного калькулятора
+        // !!!
+    });
+
 });
