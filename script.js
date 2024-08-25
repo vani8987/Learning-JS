@@ -195,47 +195,58 @@ BlockRed.addEventListener('mouseover', function() {
 
 // создать калькулятор
 
-const inpNumber = document.querySelector('#inpNumber')
-const btnCalculator = document.querySelectorAll('#btnCalculator')
+const inpNumber = document.querySelector('#inpNumber');
+const btnCalculator = document.querySelectorAll('#btnCalculator');
 
-let result = 0
-let process = 0
+let numberOne = '';
+let NumberTwo = '';
+let sign = '';
+let finish = false;
+
+const numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+const operations = ['%', '/', 'х', '-', '+'];
 
 inpNumber.addEventListener('click', function() {
-    // при клике на инпут о исчезает
     if (inpNumber.focus) {
         inpNumber.value = ''
     } 
-
-
-    // !!!
-    // доделать функция возврата 0 когда уходит фокус с инпута
-    // !!!
-
 });
+
+function ClearAll() {
+    inpNumber.value = 0;
+    numberOne = '';
+    NumberTwo = '';
+    sign = '';
+    finish = false;
+};
 
 
 btnCalculator.forEach(item => {
     item.addEventListener('click', function(e) {
-        // функция убирает значение из инпута
-        if (e.target.innerHTML == 'AC' && !inpNumber.value == 0) {
-            inpNumber.value = 0;
+        key = e.target.innerHTML;
+        
+        if (key == 'AC') {
+            ClearAll();
+        };
+
+        if (numbers.includes(key)) {
+            if (sign == '') {
+                numberOne += key;
+                inpNumber.value = numberOne;          
+            } else {
+                NumberTwo += key;
+                inpNumber.value = NumberTwo;
+            }    
+        } 
+        
+        if (operations.includes(key)) {
+            sign = key;
+            inpNumber.value = sign;
         }
 
 
-        // !!!
-        // реализовать кнопки операции
-        // !!!
 
-
-        // !!!
-        // реализовать вывод чисел и операций в инпут
-        // !!!
-
-
-        // !!!
-        // сделать скрипты основного калькулятора
-        // !!!
     });
-
 });
+
+

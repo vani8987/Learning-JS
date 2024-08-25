@@ -414,7 +414,12 @@ input::-webkit-outer-spin-button,
     width: calc(50% - 10px);
 }
 
+.btnCalculator .gray-main{
+    width: calc(35% - 3px);
+}
+
 .btnCalculator .equally{
+    width: calc(47% - 0px);
     background-color: #00194e;
 }
 
