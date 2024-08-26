@@ -201,10 +201,10 @@ const btnCalculator = document.querySelectorAll('#btnCalculator');
 let numberOne = '';
 let NumberTwo = '';
 let sign = '';
-let finish = false;
 
 const numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
 const operations = ['%', '/', 'х', '-', '+'];
+
 
 inpNumber.addEventListener('click', function() {
     if (inpNumber.focus) {
@@ -217,18 +217,18 @@ function ClearAll() {
     numberOne = '';
     NumberTwo = '';
     sign = '';
-    finish = false;
 };
 
 
 btnCalculator.forEach(item => {
     item.addEventListener('click', function(e) {
         key = e.target.innerHTML;
-        
+        // функция отчистки инпута
         if (key == 'AC') {
             ClearAll();
         };
 
+        // функция использования кнопок чисел
         if (numbers.includes(key)) {
             if (sign == '') {
                 numberOne += key;
@@ -236,17 +236,60 @@ btnCalculator.forEach(item => {
             } else {
                 NumberTwo += key;
                 inpNumber.value = NumberTwo;
-            }    
-        } 
-        
-        if (operations.includes(key)) {
+            };    
+        }; 
+
+        // функция использования кнопок операций
+        if (operations.includes(key) && !numberOne == '') {
             sign = key;
             inpNumber.value = sign;
-        }
+        };
 
+        // разблокировка = 
+        if (!numberOne == '' && !NumberTwo == '') {
+            equally = document.querySelector('.equally');
+            equally.removeAttribute('disabled', 'disabled');
+        };
 
+        // основные расчеты калькулятора
+        if (key == '=') {
+            switch (sign) {
+                case 'х':
+                    FinelNumber = numberOne * NumberTwo
+                    inpNumber.value = FinelNumber
+                    break;
+                
+                case '/':
+                    FinelNumber = numberOne / NumberTwo;
+                    inpNumber.value = FinelNumber;
 
+                    if (NumberTwo == '0') { 
+                        inpNumber.value = 'на 0 делить нельзя'
+                        numberOne = '';
+                        NumberTwo = '';
+                        sign = '';
+                    }
+                    break;
+                
+                case '-':
+                    FinelNumber = numberOne - NumberTwo;
+                    inpNumber.value = FinelNumber;
+                    break;
+
+                case '+':
+                    FinelNumber = +numberOne + +NumberTwo;
+                    inpNumber.value = FinelNumber;
+                    break;
+                
+                default:
+                    console.log('ошибка')
+                    break;
+            };
+        };
     });
 });
 
+
+
+// доделать повторное использование калькулятора без нажатия AC
 
