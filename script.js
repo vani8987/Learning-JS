@@ -201,6 +201,7 @@ const btnCalculator = document.querySelectorAll('#btnCalculator');
 let numberOne = '';
 let NumberTwo = '';
 let sign = '';
+let FinelNumber = '';
 
 const numbers = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
 const operations = ['%', '/', 'х', '-', '+'];
@@ -249,6 +250,9 @@ btnCalculator.forEach(item => {
         if (!numberOne == '' && !NumberTwo == '') {
             equally = document.querySelector('.equally');
             equally.removeAttribute('disabled', 'disabled');
+        } else {
+            equally = document.querySelector('.equally');
+            equally.setAttribute('disabled', 'disabled')
         };
 
         // основные расчеты калькулятора
@@ -257,11 +261,16 @@ btnCalculator.forEach(item => {
                 case 'х':
                     FinelNumber = numberOne * NumberTwo
                     inpNumber.value = FinelNumber
+                    NumberTwo = '';
+                    sign = '';
+
                     break;
                 
                 case '/':
                     FinelNumber = numberOne / NumberTwo;
-                    inpNumber.value = FinelNumber;
+                    inpNumber.value = FinelNumber; 
+                    NumberTwo = '';
+                    sign = '';
 
                     if (NumberTwo == '0') { 
                         inpNumber.value = 'на 0 делить нельзя'
@@ -274,13 +283,25 @@ btnCalculator.forEach(item => {
                 case '-':
                     FinelNumber = numberOne - NumberTwo;
                     inpNumber.value = FinelNumber;
+                    NumberTwo = '';
+                    sign = ''
+
                     break;
 
                 case '+':
                     FinelNumber = +numberOne + +NumberTwo;
                     inpNumber.value = FinelNumber;
+                    NumberTwo = '';
+                    sign = '';
                     break;
                 
+                case '%':
+                    FinelNumber = numberOne / 100 * NumberTwo;
+                    inpNumber.value = FinelNumber;
+                    NumberTwo = '';
+                    sign = ''
+                    break;
+
                 default:
                     console.log('ошибка')
                     break;
@@ -289,7 +310,24 @@ btnCalculator.forEach(item => {
     });
 });
 
-
-
 // доделать повторное использование калькулятора без нажатия AC
+
+
+// Ассинхронность
+
+// Написать функцию с колбеком, которая принимает число с колбеком и через секунду выводить в консоль число. Ограничения - для решения задачи setTimeout - можно использовать только один раз! Реализовать вывод в консоль от 1 до 10 через секунду. 
+
+
+// function print(n) {
+//     setTimeout(function(){
+//         console.log(n)
+//     },n*2000);
+// }
+
+// for (let n = 1; n <= 10; n++){
+//     print(n);
+// }
+
+
+// Выводим от 1 до 10 через секунду каждый раз. Используя Promise. Ограничения - setTimeout и new Promise() мы можем вызывать только один раз для решения нашей задачи.
 
