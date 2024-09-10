@@ -443,29 +443,32 @@ btnCalculator.forEach(item => {
 
 // Выводим от 1 до 10 через секунду каждый раз. Используя Promise. Ограничения - setTimeout и new Promise() мы можем вызывать только один раз для решения нашей задачи.
 
-// let n = 1
+// let time = 1
 
-// const InputNumberOneTen = (number) => {
+// const promise = new Promise((resolve, reject) => { 
+//     setTimeout(() => {
+//         resolve();
+//     }, time * 2000);
+// });
 
+// function PromiseNumber() {
 //     return new Promise((resolve, reject) => {
-//         setTimeout(function () {
-//             resolve(number)
-//         }, 1000);
+//         setTimeout(() => {
+//             resolve();
+//         }, 2000);
 //     });
-// }
-
-// function OutpurNumber(n) {
-//     if (n !== 10) {
-//         InputNumberOneTen(n).then(() => {
-//             console.log(n)
-//             OutpurNumber(n + 1)
-//         }); 
-//     };
-
 // };
 
-// OutpurNumber(n);
+// function OutputNumber(n) {
+//     if (n <= 10) {
+//         PromiseNumber().then(() => {
+//             console.log(n);
+//             OutputNumber(n + 1)
+//         });
+//     }
+// }
 
+// OutputNumber(1)
 
 //  !!!изучение Promise!!! - ВЫПОЛНЕНО
 
@@ -475,3 +478,159 @@ btnCalculator.forEach(item => {
 
 // !!!изучение async-await!!!
 
+// const outTime = 500;
+
+// const squatingTime = 200;
+
+// function wringOut(count) {
+    
+//     return new Promise((resolve, reject) => {
+
+
+//         if (count > 100) {
+//             reject(new Error('слишком много отжиманий'));
+//         };
+
+//         setTimeout(() => {
+            
+//             resolve();
+
+//         }, count * outTime);
+
+
+//     });
+// };
+
+
+// function squating(count) {
+//     return new Promise((resolve, reject) => {
+
+//         if (count > 100) {
+//             reject(new Error('слишком много приседаний'));
+//         };
+
+//         setTimeout(() => {
+
+//             resolve();
+
+//         }, count * squatingTime);
+
+//     });
+// };
+
+
+// async function MyTrening() {
+//     try {
+//         console.log('начать тренировку');
+//         await wringOut(10)
+//         console.log('отжался 10 раз')
+//         await squating(20);
+//         console.log('присел 20 раз')
+//         console.log('тренировка окончена');
+//         return true;      
+
+//     }catch(err) {
+//         console.log(err.toString())
+//         return false;
+//     };
+// };
+
+// MyTrening().then((result) => {
+//     console.log(result);
+// });
+
+
+// Скопируем решения из прошлой задачи и переписываем на async-await функцию, конструкцию .then - не используем
+
+
+// function PromiseNumber() {
+//     const time = 2
+
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve();
+//         }, time * 2000);
+//     });
+// };
+
+// async function OutputNumber() {
+//     try {
+//         for (let num = 1; num <= 10; num++) {
+//             await PromiseNumber();
+//             console.log(num);
+//         }
+//         return true;
+
+//     }catch(err) {
+//         console.log('...')
+//         return false; 
+//     };
+// };
+
+// OutputNumber().then((result) => {
+//     console.log(result);
+// });
+
+
+//  !!!изучение async-await!!! - ВЫПОЛНЕНО
+
+
+//  ==============================================================================================================
+
+
+// Сделайте функцию, которая будет генерировать случайные числа от 1 до 10. Сделайте так, чтобы сгенерированное число было задержкой функции setTimeout в секундах. Оберните все это в промис. Пусть промис выполнится успешно, если сгенерировано число от 1 до 5, и с ошибкой - если от 6 до 10
+
+// console.log("програма запущена")
+
+// function generatorNum() {
+//     const arrNumber = [];
+
+//     for (let n = 1; n <= 10; n++) {
+//         arrNumber.push(n);
+//     };
+
+//     let randomNum = (Math.floor(Math.random() * arrNumber.length + 1));
+
+//     return randomNum;
+// };
+
+// let num = generatorNum();
+
+// function promiseNumber() {
+//     return new Promise((resolve, reject) => {
+        
+//         if (num <= 5) {
+//             setTimeout(() => {
+//                 resolve();
+//             }, 2000);
+//         };
+
+//         if (num >= 6) {
+//             reject(new Error('ОШИБКА, число должно быть меньше 6'));
+//         };  
+
+//     });
+// };
+
+// async function outputNum() {
+//     try {
+//         await promiseNumber();
+//         console.log(num);
+//         console.log("програма отключена")
+
+//         return true;
+
+//     }catch(err) {
+//         console.log(err.toString());
+//         console.log("програма отключена")
+
+//         return false;
+//     };
+// };
+
+// outputNum().then((result) => {
+//     console.log(result);
+// });
+
+
+//  ==============================================================================================================
