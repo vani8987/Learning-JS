@@ -634,3 +634,278 @@ btnCalculator.forEach(item => {
 
 
 //  ==============================================================================================================
+
+
+// Сделайте цепочку из трех промисов. Пусть первый промис возвращает число. Сделайте так, чтобы каждый последующий промис через 3 секунды возводил в квадрат результат предыдущего промиса. После окончания манипуляций выведите число алертом на экран.
+
+
+// function promise() {
+//     return new Promise((resolve, reject) => {
+//         setTimeout(() => {
+//             resolve()
+//         }, 3000);
+//     });
+// };
+
+// async function outputNumber() {
+//     try {
+//         await promise();
+//         let num = 4;
+//         await promise();
+//         num = Math.pow(num, 2)
+//         await promise();
+//         num = Math.pow(num, 2)
+//         alert(num)
+//         return true;
+
+//     } catch (err) {
+//         console.log("Error")
+//         return false;
+//     };
+// };
+
+// outputNumber().then((result) => {
+//     console.log(result);
+// });
+
+
+//  ==============================================================================================================
+
+
+// Выполните запрос по получению списка пользователей, по этому url https://jsonplaceholder.typicode.com/users, в случае успеха выводим на экран пользователей со всеми данными в табличку. В случае не успеха выводим на экран ошибку "Ошибка, запрос не отработан". Используем для решения fetch.
+
+
+
+// fetch('https://jsonplaceholder.typicode.com/users')
+// .then((data) => {
+//     if (data.status === 200) {
+//         return data.json();
+//     } else {
+//         console.error('Ошибка, запрос не отработан');
+//         return false;
+//     }
+
+// }).then((info) => {
+//     info.forEach(item => {
+//         console.log(item)
+//     });
+// })
+
+
+//  ==============================================================================================================
+
+
+// изучение обьектов
+
+
+// const user = {
+//     name: 'Олег',
+//     age: 28,
+//     isDeveloper: undefined
+// }
+
+// for (const key in user) {
+//     console.log(user[key])
+// }
+
+
+//  ==============================================================================================================
+
+
+// У нас есть объект, в котором хранятся зарплаты нашей команды:
+
+// let salaries = {
+//   John: 100,
+//   Ann: 160,
+//   Pete: 130
+// }
+// Напишите код для суммирования всех зарплат и сохраните результат в переменной sum. Должно получиться 390.
+// Если объект salaries пуст, то результат должен быть 0.
+
+// const salaries = {
+//   John: 100,
+//   Ann: 160,
+//   Pete: 130,
+// };
+
+// let sum = 0;
+
+// for (const key in salaries) {
+//     if (key.length === 0) {
+//         sum = 0;
+//         console.log('в обьекте нет значений')
+//         break
+//     } else {
+//         sum += salaries[key]
+//     }
+// }
+
+
+// console.log(sum)
+
+//  ==============================================================================================================
+
+// Создайте функцию multiplyNumeric(obj), которая умножает все числовые свойства объекта obj на 2.
+
+// Например:
+
+// // до вызова функции
+// let menu = {
+//   width: 200,
+//   height: 300,
+//   title: "My menu"
+// };
+
+// multiplyNumeric(menu);
+
+// // после вызова функции
+// menu = {
+//   width: 400,
+//   height: 600,
+//   title: "My menu"
+// };
+// Обратите внимание, что multiplyNumeric не нужно ничего возвращать. Следует напрямую изменять объект.
+// P.S. Используйте typeof для проверки, что значение свойства числовое.
+
+
+// const menu = {
+//   width: 200,
+//   height: 300,
+//   title: "My menu"
+// };
+
+// console.log(menu)
+
+// const multiplyNumeric = (obj) => {
+//     for (let key in obj) {
+//         if (typeof obj[key] === 'number') {
+//             obj[key] *= 2
+//         }
+//     };
+//     console.log(obj)
+// };
+
+// multiplyNumeric(menu)
+
+
+// Написать объект ladder - объект, который позволяет подниматься вверх и спускаться. Пример работы должен быть таким:
+
+// ladder.showStep(); // 0 (выводит ступеньку на который мы находимся)
+// ladder.up(); 
+// ladder.up();
+// ladder.showStep(); // 2
+// ladder.down();
+// ladder.showStep(); // 1
+
+// const ladder = {
+//     ladder: 0,
+    
+//     up() {
+//         ladder.ladder += 1;
+//     },
+
+//     down() {
+//         ladder.ladder -= 1;
+
+//         if (ladder.ladder < 0) {
+//             console.log("ниже нуля ступенька не может быть");
+//             ladder.ladder += 1;
+//         };
+//     },
+
+//     showStep() {
+//         console.log(ladder.ladder);
+//     },
+// };
+
+// ladder.showStep();
+
+// ladder.up();
+// ladder.up();
+// ladder.up();
+// ladder.showStep();
+// ladder.down();
+// ladder.showStep();
+
+
+//  ==============================================================================================================
+
+// Регулярные выражения
+
+// Число/не число
+// const regexp = /\d\d/; 
+// const regexp = /\D\D/;
+
+// пробел/не пробельный
+// const regexp = /\s\d\d\s/;
+// const regexp = /\s\d\d\S/;
+
+// числа/англиские символы/нижние подчёркивание
+// const regexp = /\s\w\w\s/;
+// const regexp = /\w\w\w\w\w/;
+
+// не слово
+// const regexp = /\W/;
+
+// const str = 'привет/hello, я Игорь! Тебе 20? Мне вот 23 года_';
+
+
+// НАБОРЫ!!!!
+
+// const regexp = /[ЮИ]ра/;
+
+// исключающий
+// const regexp = /[^ЮИ]ра/;
+
+// const str = 'Это Юра и Ира сказали ура!'
+
+// const regexp = /[в-д]/;
+// const regexp = /[^a-я]/;
+// const str = 'абвгдеёжзклмнопрстуфчцчшщъыьэюя'
+
+// const regexp = /\d\d\.\d\d\.\d\d\d\d/;
+
+// const regexp = /\d{2}\.\d{2}\.\d{4}/;
+// const str = 'сегодня 14.09.2024'
+
+// const regexp = /colou?r/;
+// const str = 'What color is the cat?'
+
+// const regexp = /\d*?/;
+// const str = '0123456789'
+
+// const regexp = /\d+?/;
+// const str = '0123456789'
+
+// console.log(str.match(regexp))
+
+
+// const regexp = /\s*,\s*/;
+// const str = '1,2, 3  , 4, 5,6,   7   , 8'
+
+// const result = str.split(regexp)
+// console.log(result)
+
+// const regexp = /\d{6}/;
+// const str = '...телефон 123456, его почта...'
+
+// const result = str.search(regexp)
+// console.log(result)
+
+
+// Проверка URL на валидность. Передаем урл функции и проверяем валидное оно или нет (возращаем тру или фолс). Критерии: Урл должен начинаться с http:// иили https:// и заканчиваться на .php или .html. Например - http://site.ru/index.php - валидный, http://site.com - не валидный, site.ru/index.php - не валидный
+
+// const url = 'http://site.ru/index.php';
+
+// const regExt = /(^https?:\/\/)?(\.php|html$)/i;
+
+// if (url.match(regExt)) {
+//     console.log('сайт валиден')
+// } else {
+//     console.log('сайт не валиден') 
+// };
+    
+
+
+// !!!ооп - обьективно оринтированное программирование!!!
+

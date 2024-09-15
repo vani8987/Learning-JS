@@ -411,7 +411,7 @@ input::-webkit-outer-spin-button,
 }
 
 .btnCalculator .zero{
-    width: calc(50% - 10px);
+    width: calc(50% - 10px)
 }
 
 .btnCalculator .gray-main{
