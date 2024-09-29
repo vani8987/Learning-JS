@@ -1,44 +1,3 @@
-// function GetTheAmount() {
-//     let salaries = {
-//         John: 100,
-//         Ann: 160,
-//         Pete: 130
-//     };
-
-//     let summ = 0;
-
-
-//     for (let key in salaries) {
-//         summ += salaries[key];
-//     };
-
-//     console.log(summ);
-
-// };
-
-// GetTheAmount();
-
-// Создайте функцию multiplyNumeric(obj), которая умножает все 
-// числовые свойства объекта obj на 2.
-
-// let menu = {
-//     width: 200,
-//     height: 300,
-//     title: "My menu"
-//   };
- 
-//  function multiplyNumeric(obj) {
-//     for(key in obj) {
-//        if (typeof obj[key] === 'number') {
-//           obj[key] *= 2;
-//        }
-//     }
-//  }
-  
-//  multiplyNumeric(menu); // изменили размер
-//  console.log(menu);
-
-
 //  ==============================================================================================================
 
 
@@ -429,13 +388,14 @@ btnCalculator.forEach(item => {
 // wringOut(10)
 //     .then(() =>{
 //         console.log('отжался 10 раз')
-//         return squating(200);
+//         return squating(20);
     
 //     }).then(() => {
 //         console.log('присел 20 раз')
-//         console.log('тренировка окончена');
+//         console.log('тренировка окончена')
 
-// }).catch((err) => {
+// }).
+// .catch((err) => {
 
 //     console.log(err.toString())
 // });
@@ -910,3 +870,491 @@ btnCalculator.forEach(item => {
 // !!!ооп - обьективно оринтированное программирование!!!
 
 
+// class Human {
+//     constructor(name, age, status) {
+//         this.name = name
+//         this.age = age
+//         this.status = status
+//     };  
+
+//     NameAge() {
+//         console.log(`Это ${this.name}, ему/ей ${this.age} лет/года и он/она ${this.status}`)
+//     }
+// };
+
+// const Human1 = new Human("василий", 19, "студет")
+// const Human2 = new Human("Пётр", 29, "рабочий")
+// const Human3 = new Human("Света", 54, "Пенсионер")
+
+// console.log(Human1)
+// console.log(Human2)
+// console.log(Human3)
+
+
+// Human1.NameAge()
+// Human2.NameAge()
+// Human3.NameAge()
+
+
+// Наследование!!!
+// class NoHuman extends Human {
+//     constructor(name, age, animal) {
+//         super(name, age);
+//         this.animal = animal
+//     }
+
+//     NameAge() {
+//         console.log(`Это ${this.name}, ему/ей ${this.age} лет/года и он/она ${this.animal}`)
+//     }
+// }
+
+//  ==============================================================================================================
+
+
+// Полиморфизм!!!
+// const NoHuman1 = new NoHuman("василиса", 2, "кошка")
+// const NoHuman2 = new NoHuman("муся", 1, "кошка")
+// const NoHuman3 = new NoHuman("хан", 1.2, "собака")
+
+// console.log(NoHuman1)
+// console.log(NoHuman2)
+// console.log(NoHuman2)
+
+
+// NoHuman1.NameAge()
+// NoHuman2.NameAge()
+// NoHuman3.NameAge()
+
+
+// Инкапсуляция!!!
+
+// class Human {
+//     constructor(Firstname, LastName) {
+//         this.Firstname = Firstname
+//         this._LastName = LastName
+//     };  
+
+//     say() {
+//         console.log(`меня зовут ${this.Firstname}.`)
+//     }
+
+//     get LastName() {
+//         return this._LastName
+//     }
+
+//     set LastName(newLastName) {
+//         this._LastName = newLastName
+//     }
+// };
+
+// const john = new Human("john", "Travola")
+
+// john.LastName = 'Malcovih'
+
+// console.log(john.LastName)
+
+
+//  ==============================================================================================================
+
+
+// Реализуйте класс Worker (Работник), который будет иметь следующие свойства: name (имя), surname (фамилия), rate (ставка за день работы), days (количество отработанных дней). Также класс должен иметь метод getSalary(), который будет выводить зарплату работника. Зарплата - это произведение (умножение) ставки rate на количество отработанных дней days. И метод getFullName() - имя и фамиля работника.
+
+// class Worker {
+//     constructor(name, surname, rate, days) {
+//         this.name = name;
+//         this.surname = surname;
+//         this.rate = rate;
+//         this.days = days;
+//     };
+
+//     getSalary() {
+//         return this.rate * this.days
+//     };
+
+//     getFullName() {
+//         return (this.surname + ' ' + this.name) 
+//     };
+// };
+
+// const worker = new Worker('Иван', 'Иванов', 10, 31);
+
+// console.log(worker.name); //выведет 'Иван'
+// console.log(worker.surname); //выведет 'Иванов'
+// console.log(worker.rate); //выведет 10
+// console.log(worker.days); //выведет 31
+// console.log(worker.getSalary()); //выведет 310 - то есть 10*31
+// console.log(worker.getFullName()); //выведет 'Иванов Иван'
+
+
+//  ==============================================================================================================
+
+
+// Напишите новый класс Boss, этот класс наследуется от класса Worker и прошлого задания. Появляется новые свойство: workers - количество работников. И зарплата считается по другому: произведение (умножение) ставки rate на количество отработанных дней и на количество работников.
+
+// class Boss extends Worker {
+//     constructor(name, surname, rate, days, workers) {
+//         super(name, surname, rate, days);
+//         this.workers = workers;
+//     };
+
+//     getFullName() {
+//         return (this.surname + ' ' + this.name) 
+//     };
+
+//     getSalary() {
+//         return this.rate * this.days * this.workers
+//     };
+// }
+
+// const boss = new Boss('Иван', 'Иванов', 10, 31, 10);
+// console.log(boss.name); //выведет 'Иван'
+// console.log(boss.surname); //выведет 'Иванов'
+// console.log(boss.rate); //выведет 10
+// console.log(boss.days); //выведет 31
+// console.log(boss.workers); //выведет 10
+// console.log(boss.getSalary()); //выведет 3100 - то есть 10*31*10
+// console.log(boss.getFullName()); //выведет 'Иванов Иван'
+
+// ToDO
+
+const contant__form = document.querySelector('.contant__form');
+const container__task = document.querySelector('.container__task');
+const input = document.querySelector('.contant__form-input')
+
+contant__form.addEventListener('submit',  addTask);
+container__task.addEventListener('click', delTask);
+
+let tasks = []
+
+if (localStorage.getItem('task')) {
+    tasks = JSON.parse(localStorage.getItem('task'))
+}
+
+tasks.forEach((item) => {
+    const Html =`<div class="task" id ="${item.id}">
+                    <h1>${item.Text}</h1>
+
+                    <div class="btn__task">
+                        <div class="container__del-task" data-action="del">
+                            <span class="container__del-btn"></span>
+                        </div>
+                    </div>
+                </div>`
+
+    container__task.insertAdjacentHTML('beforeend', Html)
+})
+
+function addTask(e) {
+    e.preventDefault();
+
+    let inputTasks = input.value
+
+    const newTask = {
+        id: Date.now(),
+        Text: inputTasks
+    }
+
+    if(!inputTasks == ''){
+        tasks.push(newTask) 
+
+        savaTasks()
+
+        const Html = 
+        `<div class="task" id ="${newTask.id}">
+            <h1>${newTask.Text}</h1>
+            <div class="btn__task">
+                <div class="container__del-task" data-action="del">
+                    <span class="container__del-btn"></span>
+                </div>
+            </div>
+        </div>`
+
+    
+        container__task.insertAdjacentHTML('beforeend', Html)
+    }
+
+    input.value = ''
+    input.focus()
+}
+
+
+function delTask(e) {
+    const self = e.target
+
+    if(self.dataset.action === "del") {
+        const task = self.closest('.task')
+        task.remove() 
+        
+
+        const index = tasks.findIndex(function(indexTask) {
+            const id = task.id
+            return indexTask.id == id
+        })
+
+        tasks.splice(index, 1)
+        savaTasks()
+    }
+}
+
+
+
+
+function savaTasks() {
+    localStorage.setItem('task', JSON.stringify(tasks))   
+}
+
+
+//  ==============================================================================================================
+
+
+// методы массивов
+
+// indexOf
+// const a = [9, 8, 7, 5, 2.3, 2, 5]
+// const b = ["hi", 'hello']
+
+// console.log(b.indexOf('hello'))
+// console.log(a.indexOf(5))
+
+// if (a.indexOf(8) !== -1) {
+//     console.log('yes')
+// } else {
+//     console.log('no')
+// }
+
+
+//  ==============================================================================================================
+
+
+// map, filter
+
+// const a = [3, 4, 5, 6, 7, 4, 129, 14, 0]
+
+// let b = a.map((item,index, a) => {
+//     console.log(index)
+//     return item * 2;
+// });
+
+
+
+// console.log(b)
+
+// let c = a.filter(item => {
+//     if (item % 2 === 0) {
+//         return true;
+//     }
+// })
+
+// console.log(c)
+
+
+//  ==============================================================================================================
+
+
+// includes
+
+// const test = [1, 2, 3, 4, 5, 6, 10 ,1000, 20]
+
+// if(test.includes(2)) {
+//     console.log('Yes')
+// } else {
+//     console.log('no')
+// }
+
+
+//  ==============================================================================================================
+
+
+// pop and push
+
+
+// let a = [99, 88];
+
+// console.log(a.push(99, 77, 88, 2))
+
+// console.log(a)
+
+
+
+// console.log(a)
+// a.pop()
+// console.log(a)
+
+
+//  ==============================================================================================================
+
+
+// const a = [-3, 1, 2, -5, 7, -9, 0, 17, 75, 201, 0];
+
+// let b = a.filter((item) => {
+//     if (item > -1) {
+//         return true;
+//     };
+// });
+
+// console.log(b);
+
+
+//  ==============================================================================================================
+ 
+
+// redues
+
+// let a = [-3, 4, -5, 7, -6, 2]
+
+// let b = a.reduce((accum, item, index, arr) => {
+//     if (item > accum) { 
+//         accum = item
+//     }
+//     return accum
+// })
+
+// console.log(b)
+
+
+// let a = [
+//     {'id': 45, city: 'arc'},
+//     {'id': 64, city: 'rca'},
+//     {'id': 421, city: 'car'},
+// ]
+
+// let b = a.reduce((accum, item) => {
+//     accum.push(item.id)
+
+//     return accum
+// }, [])
+
+// console.log(b)
+
+// b = new Set([1, 2])
+
+// console.log(Array.isArray(b))
+
+
+//  ==============================================================================================================
+
+
+// shift, slise, unshift
+
+
+// let a = [3, 4, 5];
+// let b = a.shift()
+// console.log(b)
+// console.log(a)
+
+
+// let c = a.unshift(22)
+
+// console.log(c)
+// console.log(a)
+
+
+// let d = [22, 33, 44, 11, 2, 99, 55, 10]
+
+// let f = d.slice(5)
+
+// console.log(d)
+// console.log(f)
+
+
+// ==============================================================================================================
+
+// splice, concat
+
+// const a = [1, 2, 3]
+// const b = [4, 5, 6]
+
+// console.log(a.concat(b))
+
+
+// splice
+
+// const a = [1, 2, 3, 4, 5, 6]
+
+// a.splice(1, 2, 5)
+
+// console.log(a)
+
+
+// ==============================================================================================================
+
+
+// spread
+
+// const a = [1, 2, 3, 4, 5, 6]
+// const b = ['a', 'b', 'c']
+
+// const c = [...a, ...b]
+// const c = [...a]
+// const c = [...'hello']
+// const c = [...new Set([1, 1, 2, 2, 4, 33, 3])]
+// function test() {
+//     console.log(...arguments)
+// }
+
+
+
+// test(1, 2, 3, 4)
+
+// console.log(c)
+
+
+// ==============================================================================================================
+
+
+// some, every
+
+// const a = [3, 5, 8, 4, 6]
+
+// let b = a.every((item) => {
+//     if (item > 3) {
+//         return true
+//     }
+// })
+
+// console.log(b)
+
+
+// let b = a.some(item => {
+//     if(item < 2) {
+//         return true
+//     }
+// })
+
+// console.log(b)
+
+
+// ==============================================================================================================
+
+
+// Find, FindIndex, LastIndexOf
+
+// const a = [1, 2, 3, 4, 5, 6]
+
+// find
+
+// const b = a.find(item => {
+//     if (item >= 2 && item <= 5) {
+//         return true
+//     }
+// })
+
+// console.log(b)
+
+
+// findIndex
+
+// const a = [22, 20, 18, 13, 53, 51, 256]
+
+// const b = a.findIndex(item => {
+//     if (item > 88) {
+//         return true
+//     }
+// })
+ 
+// console.log(b)
+
+
+// LastIndexOf
+
+// const d = 
